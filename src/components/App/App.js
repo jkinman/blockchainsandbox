@@ -16,6 +16,31 @@ import Footer from '../Footer';
 
 class App extends Component {
 
+  constructor( props, context ) {
+    super( props, context);
+  //   this.state = {
+  //     blockNumber:0,
+  //     blockArray:[],
+  // };
+  //   if (typeof web3 !== 'undefined') {
+  //     web3 = new Web3(web3.currentProvider);
+  //   } else {
+  //     // set the provider you want from Web3.providers
+  //     web3 = new Web3(new Web3.providers.HttpProvider(ETHERIUM_ENDPOINT));
+  //   }
+
+  }
+
+  componentDidMount() {
+    // web3.eth.subscribe( 'newBlockHeaders', (error, result) => {
+    //   this.setState({blockArray: [...this.state.blockArray, result]})
+    // });
+      
+    // web3.eth.getBlockNumber().then((data) => {
+    //   this.setState({blockNumber: data})
+    // });
+
+  }
   static propTypes = {
     context: PropTypes.shape({
       insertCss: PropTypes.func,
@@ -58,8 +83,8 @@ class App extends Component {
       <div>
         <Header />
         {this.props.children}
-        <Feedback />
-        <Footer />
+        {/* <Feedback />
+        <Footer /> */}
       </div>
     ) : this.props.children;
   }
